@@ -27,7 +27,7 @@ pd.set_option('display.float_format', lambda x: '%.2f' % x)
 
 
 # 1. OmniChannel.csv verisini okuyunuz.Dataframe’in kopyasını oluşturunuz.
-df_ = pd.read_csv("Yusuf_Behram_Bayindir_HW/homeworks/Week2/hw-2/FLO_CLTV_Tahmini/flo_data_20k.csv")
+df_ = pd.read_csv("FLO_CLTV_Tahmini/flo_data_20k.csv")
 df = df_.copy()
 
 
@@ -270,7 +270,7 @@ def create_cltv_df(dataframe):
 cltv_df = create_cltv_df(df)
 
 cltv_df.head(10)
-cltv_df.to_csv("flo_cltv_project2.csv")
+#cltv_df.to_csv("flo_cltv_project2.csv")
 
 
 
