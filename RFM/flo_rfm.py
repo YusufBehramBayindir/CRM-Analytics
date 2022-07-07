@@ -24,12 +24,37 @@ pd.set_option('display.max_columns', None)
 # Sayısal değerlerin sıfırdan sonra kaç basamağını görmek istediğimizi belirtiriz
 pd.set_option('display.float_format', lambda x: '%.3f' % x)
 
-df_ = pd.read_csv("Yusuf_Behram_Bayindir_HW/homeworks/Week2/hw-1/FLO_RFM_Analizi/flo_data_20k.csv")
+df_ = pd.read_csv("FLO_RFM_Analizi/flo_data_20k.csv")
 df = df_.copy()
 df.head(10)
 df.shape
 df.isnull().sum()
 df.describe().T
+
+
+def check_df(dataframe, head=5):
+    print("##################### Shape #####################")
+    print(dataframe.shape)
+
+    print("##################### Types #####################")
+    print(dataframe.dtypes)
+
+    print("##################### Head #####################")
+    print(dataframe.head(head))
+
+    print("##################### Tail #####################")
+    print(dataframe.tail(head))
+
+    print("##################### is null? #####################")
+    print(dataframe.isnull().sum())
+
+    print("##################### Quantiles #####################")
+    print(dataframe.quantile([0, 0.25, 0.50, 0.75, 0.99, 1]).T)
+    print(dataframe.describe().T)
+
+
+check_df(df)
+
 
 
 # Adım 3: Omnichannel müşterilerin hem online'dan hemde offline platformlardan alışveriş yaptığını ifade etmektedir. Her bir müşterinin toplam alışveriş sayısı ve harcaması için yeni değişkenler oluşturunuz.
